@@ -6,6 +6,7 @@ import logoText from '@/app/assets/round.svg'
 import { Menu } from 'lucide-react'
 import { Nunito } from 'next/font/google'
 import { SidebarClose } from 'lucide-react'
+import { XMarkIcon } from '@heroicons/react/24/outline'
 import Link from 'next/link'
 
 
@@ -60,10 +61,10 @@ const Navbar = ({onSignupClick}) => {
                 </div>
 
                 {/* sidebar */}
-                <div className={`${MenuOpen ? "translate-x-0" : "translate-x-full"} z-[9999] fixed top-0 right-0 bg-blue-50 p-12 min-h-screen transition-all duration-300`}>
+                <div className={`${MenuOpen ? "translate-x-0" : "translate-x-full"} z-[9999] fixed top-0 right-0 w-full bg-blue-50 p-12 min-h-screen transition-all duration-300`}>
 
                     <div className='absolute -mt-5'>
-                        <SidebarClose onClick={handleToggleClose} size={30} />
+                       <XMarkIcon onClick={handleToggleClose} className='w-8 h-8 !font-semibold' />
                     </div>
 
                     <ul className='mt-15'>
@@ -71,7 +72,7 @@ const Navbar = ({onSignupClick}) => {
                         <Link href='/hotels2'><li onClick={handleToggleClose} className={`${nunito.className} text-lg transition-all duration-200 hover:text-indigo-400`}>Hotels</li><br /><br /></Link>
                         <Link href='/hotels'><li onClick={handleToggleClose} className={`${nunito.className} text-lg transition-all duration-200 hover:text-indigo-400`}>Packages</li><br /><br /></Link>
                         <Link href='/passenger-information'><li onClick={handleToggleClose} className={`${nunito.className} text-lg transition-all duration-200 hover:text-indigo-400`}>Sign in</li><br /><br /></Link>
-                        <li onClick={() => {handleToggleClose(),onSignupClick()}} className={`${nunito.className} text-lg bg-[#605DEC] px-5 py-3 rounded-lg text-white transiton-all duration-300 hover:-translate-y-3`}>Sign up</li><br /><br />
+                        <li onClick={() => {handleToggleClose(),onSignupClick()}} className={`${nunito.className} text-lg bg-[#605DEC] w-[110px] px-5 py-3 rounded-lg text-white transiton-all duration-300 hover:-translate-y-3`}>Sign up</li><br /><br />
                     </ul>
 
                 </div>
